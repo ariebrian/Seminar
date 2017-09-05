@@ -8,27 +8,55 @@ class User_Model extends CI_Model
 	
 	function __construct()
 	{
+		parent::__construct();
 		$this->load->database();
 	}
 
-	public function reg_user($data)
+	public function create_user($uname,$pass,$email)
 	{
-		$this->db->insert('user',$data);
+		$data = array(
+			'uname' => $username,
+			'pass' => $this->hash_password($pass),
+			'email' => $email,
+		);
+
+		return $this->db->insert('user',$data);
 	}
 
-	public function login_user($data)
+	public function resolve_login_user($uname,$pass)
 	{
-		$cond = "uname = "."'" . $data['uname'] . "' AND " . "pass = " . "'" . $data['pass'] . "''";
-		$this->db->select('*');
+		$this->db->select('pass');
 		$this->db->from('user');
-		$this->db->where($cond);
+		$this->db->where('uname',$uname);
+		$hash = $this->db->get()->row('password');
 
-		$query = $this->db->get();
-		if ($query->num_rows() == 1) {
-			return true;
-		}else{
-			return false;
-		}
+		return $this->verify_password_hash($pass,$hash);
+		
+	}
+
+	public function get_uid_from_uname($uname)
+	{
+		$this->db->select('id_user');
+		$this->db->from('user');
+		$this->db->where('uname',$uname);
+		return $this->db->get()->row('id_user');
+	}
+
+	public function get_user($id_user)
+	{
+		$this->db->from('user');
+		$this->db->where('id_user',$id_user);
+		return $this->db->get()->row();
+	}
+
+	public function hash_password($pass)
+	{
+		return password_hash($pass, PASSWORD_BCRYPT);
+	}
+
+	public function verify_password_hash($pass,$hash)
+	{
+		return password_verify($pass,$hash);
 	}
 }
 
