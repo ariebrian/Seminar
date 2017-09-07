@@ -19,6 +19,13 @@ class TestView extends CI_Controller
 		$this->load->view('index');
 		$this->load->view('footer');
 	}
+
+	public function profile()
+	{
+		$this->load->view('header');
+		$this->load->view('profile');
+		$this->load->view('footer');
+	}
 }
 
  ?>

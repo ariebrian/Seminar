@@ -1,12 +1,87 @@
+img {
+	min-width: 100px;
+	max-width: 300px;
+	min-height: 150px;
+	max-height: 400px;
+	margin: 10px;
+}
+
 img#logo-brand {
-	max-width: 25px;
-	min-width: 25px;
-	max-height: 25px;
-	min-height: 25px;
+	max-width: 25px !important;
+	min-width: 25px !important;
+	max-height: 25px !important;
+	min-height: 25px !important;
 	float: left;
 	margin: 0 10px 0 0;
 }
 
+a.white {
+	color: white;
+}
+
+a {
+	color: black;
+}
+
 nav.navbar {
 	border-radius: 0 0 0 0;
+	background-color: #3F51B5;
+	color: white;
+	margin-bottom: 0;
+	border: 0px;
+}
+
+.navbar-default .navbar-nav>li>a, .navbar-default .navbar-brand {
+	color: white !important;
+}
+
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-brand:hover {
+	box-shadow: inset 0px -3px 0px 0px white;
+}
+
+.jumbotron	{
+	background-color: #64B5F6;
+	color: white;
+	margin: 0 0 0 0;
+	padding: 98px 0 48px 0;
+	top: 0;
+
+}
+
+.glyphicon {
+	margin: 0 5px 0 5px;
+}
+
+.footer	{
+	padding: 10px 0 10px 0;
+	margin: 10px 0 0 0;
+	border-top: 2px solid black;
+	bottom: 0;
+}
+
+ul.nav li a {
+	color: black;
+}
+
+ul.nav li a.active {
+	color: white !important;
+}
+
+img.img-list {
+	width: 25%;
+}
+
+.tab-content {
+	padding: 10px;
+}
+
+.content-normal {
+	padding: 70px 0 0 0;
+}
+
+.page-header {
+	margin: 50px 10px 0 10px;
+	border-bottom: 1px solid black;
+	padding: 10px 10px 10px 10px;
+	font-style: bold;
 }
