@@ -1,7 +1,7 @@
 <!-- Buat Data Diri -->
 <h1 class="page-header"><strong>Profil Saya</strong></h1>
-<div class="container content-normal">
-	<div class="col-md-3">
+<div class="container-fluid content-normal">
+	<div class="col-md-2">
 		<img src="<?php echo base_url(); ?>img/y-tho.jpg" alt="" class="img img-thumbnail">
 		<ul style="list-style-type: none">
 			<li>
@@ -57,7 +57,7 @@
 				<?php for ($i=0; $i < 1; $i++) { ?>
 				<tr>
 					<td>
-						<img src="<?php echo base_url(); ?>img/y-tho.jpg" alt="" class="img-list">
+						<img src="<?php echo base_url(); ?>img/y-tho.jpg" alt="" class="img-list img-thumbnail img-responsive">
 					</td>
 					<td>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum dolorum doloribus voluptate sit officiis veritatis consequuntur, praesentium quo voluptatibus aliquam mollitia maxime, impedit recusandae illo sapiente ab, fugit amet, eius.</p>
@@ -68,7 +68,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="col-md-3">
+	<div class="col-md-4">
 		<div id="calendar"></div>
 	</div>
 </div>

@@ -26,6 +26,20 @@ class TestView extends CI_Controller
 		$this->load->view('profile');
 		$this->load->view('footer');
 	}
+
+	public function desk_sem()
+	{
+		$this->load->view('header');
+		$this->load->view('desc_sem');
+		$this->load->view('footer');
+	}
+
+	public function create_event()
+	{
+		$this->load->view('header');
+		$this->load->view('create_event');
+		$this->load->view('footer');
+	}
 }
 
  ?>

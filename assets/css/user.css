@@ -43,7 +43,7 @@ nav.navbar {
 	background-color: #64B5F6;
 	color: white;
 	margin: 0 0 0 0;
-	padding: 98px 0 48px 0;
+	padding: 28px 0 48px 0;
 	top: 0;
 
 }
@@ -68,7 +68,7 @@ ul.nav li a.active {
 }
 
 img.img-list {
-	width: 25%;
+	/*width: 25%;*/
 }
 
 .tab-content {
@@ -80,8 +80,49 @@ img.img-list {
 }
 
 .page-header {
-	margin: 50px 10px 0 10px;
+	margin: 50px 10px 10px 10px;
 	border-bottom: 1px solid black;
 	padding: 10px 10px 10px 10px;
 	font-style: bold;
+}
+
+img.img-wrap {
+	/*float: left;*/
+	margin: 0 10px 5px 0;
+	max-height: 350px;
+}
+
+.title {
+	width: 100%;
+	text-align: center;
+	border-bottom: 1px solid black;
+	margin: 0 10px 10px 0;
+	padding: 0 0 10px 0;
+}
+
+.sem-content {
+	border-radius: 10px 10px 10px 10px;
+	background-color: #ECEFF1;
+	margin: 25px 0 25px 0;
+}
+
+.sem-desc-head {
+	border-bottom: 1px solid #90A4AE;
+	color: #607D8B;
+	padding: 10px 0 10px 10px;
+}
+
+.sem-desc-body {
+	padding: 25px;
+	border-bottom: 1px solid #90A4AE;
+}
+
+.sem-desc-foot {
+	padding: 15px;
+
+}
+
+.img-upload {
+	max-height: 300px;
+	min-height: 300px;
 }
