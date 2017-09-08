@@ -4,7 +4,17 @@
 <div class="container-fluid">
 	<div class="col-md-4">
 		<center>	
-			<img src="<?php echo base_url(); ?>img/y-tho.jpg" alt="" class="img-wrap">
+			<img src="<?php echo base_url(); ?>img/whaha.png" id="img-modal">
+
+			<div id="myModal" class="modal">
+				<div class="zoom-tools">
+					<span class="glyphicon glyphicon-zoom-in" id="zoom-in"></span>
+					<span class="glyphicon glyphicon-zoom-out" id="zoom-out"></span>
+				</div>
+				<span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+
+				<img class="modal-content" id="img01" data-zoom-image="<?php echo base_url(); ?>img/y-tho.png">
+			</div>
 		</center>
 	</div>
 	<div class="col-md-4">
