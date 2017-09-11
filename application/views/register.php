@@ -1,18 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-	<link rel="stylesheet" type="text/css" href="">
-	<!-- Bootstrap Core CSS -->
-    <link href="css/themes/journal/journal.bootstrap.min.css" rel="stylesheet">
-    <link href="css/shop-homepage.css" rel="stylesheet">
-    <link href="css/custom.css" rel="stylesheet">
-    <link rel="stylesheet" href="fontawesome/css/font-awesome.min.css">
-</head>
-<body>
-<div class="container">
+<div class="content-normal">	
 	<div class="row">
-
 		<div class="col-lg-4 col-lg-offset-4">
 			<h1>Register</h1>
 			<form>
@@ -43,12 +30,5 @@
 				</div>
 			</form>
 		</div>
-
-	</div>
 </div>
-<!-- jQuery -->
-    <script src="js/jquery.js"></script>
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-</body>
-</html>
+</div>

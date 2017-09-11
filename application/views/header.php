@@ -13,7 +13,6 @@
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/moment.js"></script>
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/underscore-min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/clndr.min.js"></script>
-	<!-- <script type="text/javascript" src="<?php echo base_url(); ?>assets/fullcalendar/fullcalendar.min.js"></script> -->
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/user.js"></script>
 </head>
 <body>
