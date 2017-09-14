@@ -16,7 +16,6 @@ class Seminar_Model extends CI_Model
 	{
 		$this->db->select('*');
 		$this->db->from('list_seminar');
-		$this->db->limit();
 		$query = $this->db->get();
 
 		if ($query->num_rows() == 1) {

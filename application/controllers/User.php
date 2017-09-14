@@ -1,189 +1,169 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+<?php 
 
 /**
- * User class.
- * 
- * @extends CI_Controller
- */
-class User extends CI_Controller {
-
-	/**
-	 * __construct function.
-	 * 
-	 * @access public
-	 * @return void
-	 */
-	public function __construct() {
-		
+* 
+*/
+class User extends CI_Controller
+{
+	
+	function __construct()
+	{
 		parent::__construct();
-		$this->load->library(array('session'));
-		$this->load->helper(array('url'));
-		$this->load->model('user_model');
-		
+		$this->load->helper(array('form','url'));
+		$this->load->library('form_validation');
+		$this->load->library('session');
+		$this->load->model('User_Model');
 	}
-	
-	
-	public function index() {
-		
 
-		
+	public function user_login()
+	{
+		$this->load->view('header');
+		$this->load->view('log');
+		$this->load->view('footer');
 	}
-	
-	/**
-	 * register function.
-	 * 
-	 * @access public
-	 * @return void
-	 */
-	public function register() {
-		
-		// create the data object
-		$data = new stdClass();
-		
-		// load form helper and validation library
-		$this->load->helper('form');
-		$this->load->library('form_validation');
-		
-		// set validation rules
-		$this->form_validation->set_rules('username', 'Username', 'trim|required|alpha_numeric|min_length[4]|is_unique[users.username]', array('is_unique' => 'This username already exists. Please choose another one.'));
-		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|is_unique[users.email]');
-		$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[6]');
-		$this->form_validation->set_rules('password_confirm', 'Confirm Password', 'trim|required|min_length[6]|matches[password]');
-		
-		if ($this->form_validation->run() === false) {
-			
-			// validation not ok, send validation errors to the view
+
+	public function user_reg()
+	{
+		$this->load->view('header');
+		$this->load->view('register');
+		$this->load->view('footer');	
+	}
+
+	public function login_proc()
+	{
+		$val_login = array(
+							array(
+								'field' => 'username',
+								'label' => 'Username',
+								'rules' => 'required',
+								'errors' => array('
+											required' =>'Anda harus mengisi %s')),
+							array(
+								'field' => 'password',
+								'label' => 'Password',
+								'rules' => 'required',
+								'errors' => array('
+											required' =>'Anda harus mengisi %s')),
+					);
+
+		$this->form_validation->set_rules($val_login);
+		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('header');
-			$this->load->view('user/register/register', $data);
+			$this->load->view('log');
 			$this->load->view('footer');
-			
-		} else {
-			
-			// set variables from the form
-			$username = $this->input->post('username');
-			$email    = $this->input->post('email');
-			$password = $this->input->post('password');
-			
-			if ($this->user_model->create_user($username, $email, $password)) {
-				
-				// user creation ok
-				$this->load->view('header');
-				$this->load->view('user/register/register_success', $data);
-				$this->load->view('footer');
-				
-			} else {
-				
-				// user creation failed, this should never happen
-				$data->error = 'There was a problem creating your new account. Please try again.';
-				
-				// send error to the view
-				$this->load->view('header');
-				$this->load->view('user/register/register', $data);
-				$this->load->view('footer');
-				
+		}else{
+			$data = array(
+				'uname' => $this->input->post('username'),
+				'pass' => md5($this->input->post('password')) 
+				);
+			$result = $this->User_Model->login($data);
+			if ($result == TRUE) {
+				$uname = $this->input->post('username');
+				$result = $this->User_Model->user_info($uname);
+				if ($result != false) {
+					$session_data = array(
+										'uname' => $result[0]->uname , 
+										'email' => $result[0]->email,
+										);
+					$this->session->set_userdata($session_data);
+					redirect('TestView/profile');
+				}else{
+					$data = array('message_display' => 'Nama Pengguna atau Password Salah');
+	                
+	                $this->session->set_userdata( $data );
+	                redirect('login');
+				}
+
 			}
-			
 		}
-		
 	}
-		
-	/**
-	 * login function.
-	 * 
-	 * @access public
-	 * @return void
-	 */
-	public function login() {
-		
-		// create the data object
-		$data = new stdClass();
-		
-		// load form helper and validation library
-		$this->load->helper('form');
-		$this->load->library('form_validation');
-		
-		// set validation rules
-		$this->form_validation->set_rules('user_name', 'Username', 'required');
-		$this->form_validation->set_rules('password', 'Password', 'required');
-		
-		if ($this->form_validation->run() == false) {
-			
-			// validation not ok, send validation errors to the view
+
+	public function register()
+	{
+		$val_reg = array(
+							array(
+								'field' => 'username',
+								'label' => 'Username',
+								'rules' => '
+										required|is_unique[user.uname]',
+								'errors' => array(
+											'required' => 'Anda harus mengisi %s',
+											'is_unique' => '%s sudah dipakai'
+											),		
+							),
+							array(
+								'field' => 'password',
+								'label' => 'Password',
+								'rules' => '
+										required|min_length[6]',
+								'errors' => array(
+											'required' => 'Anda harus mengisi %s',
+											'min_length' => '%s minimal 6 karakter'
+											),		
+							),
+							array(
+								'field' => 'confirm',
+								'label' => 'Konfirmasi Password',
+								'rules' => '
+										required|matches[password]',
+								'errors' => array(
+											'required' => 'Anda harus mengisi %s',
+											'matches' => '%s tidak sesuai password'
+											),		
+							),
+							array(
+								'field' => 'name',
+								'label' => 'Nama',
+								'rules' => '
+										required',
+								'errors' => array(
+											'required' => 'Anda harus mengisi %s'
+											),		
+							),
+							array(
+								'field' => 'email',
+								'label' => 'Email',
+								'rules' => '
+										required',
+								'errors' => array(
+											'required' => 'Anda harus mengisi %s'
+											),		
+							),
+							array(
+								'field' => 'phone',
+								'label' => 'Phone',
+								'rules' => '
+										required',
+								'errors' => array(
+											'required' => 'Anda harus mengisi %s'
+											),		
+							),
+					);
+		$this->form_validation->set_rules($val_reg);
+
+		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('header');
-			$this->load->view('user/login/');
+			$this->load->view('register');
 			$this->load->view('footer');
-			
-		} else {
-			
-			// set variables from the form
-			$username = $this->input->post('user_name');
-			$password = $this->input->post('password');
-			
-			if ($this->user_model->resolve_login_user($username, $password)) {
-				
-				$user_id = $this->user_model->get_uid_from_uname($username);
-				$user    = $this->user_model->get_user($user_id);
-				
-				// set session user datas
-				$_SESSION['user_id']      = (int)$user->id;
-				$_SESSION['username']     = (string)$user->username;
-				$_SESSION['logged_in']    = (bool)true;
-				$_SESSION['is_confirmed'] = (bool)$user->is_confirmed;
-				$_SESSION['is_admin']     = (bool)$user->is_admin;
-				
-				// user login ok
-				$this->load->view('header');
-				$this->load->view('user/login/login_success', $data);
-				$this->load->view('footer');
-				
-			} else {
-				
-				// login failed
-				$data->error = 'Wrong username or password.';
-				
-				// send error to the view
-				$this->load->view('header');
-				$this->load->view('user/login/login', $data);
-				$this->load->view('footer');
-				
-			}
-			
+		}else{
+			$data = array(
+						'uname' => $this->input->post('username'), 
+						'pass' => md5($this->input->post('password')),
+						'name' => $this->input->post('name'),
+						'email' => $this->input->post('email'),
+						'phone' => $this->input->post('phone'),
+					);
+			$this->User_Model->create_user($data);
+			redirect('login');
 		}
-		
+
+
+
+
+
+
+
 	}
-	
-	/**
-	 * logout function.
-	 * 
-	 * @access public
-	 * @return void
-	 */
-	public function logout() {
-		
-		// create the data object
-		$data = new stdClass();
-		
-		if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
-			
-			// remove session datas
-			foreach ($_SESSION as $key => $value) {
-				unset($_SESSION[$key]);
-			}
-			
-			// user logout ok
-			$this->load->view('header');
-			$this->load->view('user/logout/logout_success', $data);
-			$this->load->view('footer');
-			
-		} else {
-			
-			// there user was not logged in, we cannot logged him out,
-			// redirect him to site root
-			redirect('/');
-			
-		}
-		
-	}
-	
 }
+
+ ?>
