@@ -42,4 +42,4 @@ class Seminar_Model extends CI_Model
 	}
 }
 
- ?>
+?>

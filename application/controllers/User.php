@@ -29,63 +29,13 @@ class User extends CI_Controller
 		$this->load->view('footer');	
 	}
 
-	public function login_proc()
-	{
-		$val_login = array(
-							array(
-								'field' => 'username',
-								'label' => 'Username',
-								'rules' => 'required',
-								'errors' => array('
-											required' =>'Anda harus mengisi %s')),
-							array(
-								'field' => 'password',
-								'label' => 'Password',
-								'rules' => 'required',
-								'errors' => array('
-											required' =>'Anda harus mengisi %s')),
-					);
-
-		$this->form_validation->set_rules($val_login);
-		if ($this->form_validation->run() == FALSE) {
-			$this->load->view('header');
-			$this->load->view('log');
-			$this->load->view('footer');
-		}else{
-			$data = array(
-				'uname' => $this->input->post('username'),
-				'pass' => md5($this->input->post('password')) 
-				);
-			$result = $this->User_Model->login($data);
-			if ($result == TRUE) {
-				$uname = $this->input->post('username');
-				$result = $this->User_Model->user_info($uname);
-				if ($result != false) {
-					$session_data = array(
-										'uname' => $result[0]->uname , 
-										'email' => $result[0]->email,
-										);
-					$this->session->set_userdata($session_data);
-					redirect('TestView/profile');
-				}else{
-					$data = array('message_display' => 'Nama Pengguna atau Password Salah');
-	                
-	                $this->session->set_userdata( $data );
-	                redirect('login');
-				}
-
-			}
-		}
-	}
-
-	public function register()
+		public function register()
 	{
 		$val_reg = array(
 							array(
 								'field' => 'username',
 								'label' => 'Username',
-								'rules' => '
-										required|is_unique[user.uname]',
+								'rules' => 'required|is_unique[user.uname]',
 								'errors' => array(
 											'required' => 'Anda harus mengisi %s',
 											'is_unique' => '%s sudah dipakai'
@@ -94,8 +44,7 @@ class User extends CI_Controller
 							array(
 								'field' => 'password',
 								'label' => 'Password',
-								'rules' => '
-										required|min_length[6]',
+								'rules' => 'required|min_length[6]',
 								'errors' => array(
 											'required' => 'Anda harus mengisi %s',
 											'min_length' => '%s minimal 6 karakter'
@@ -104,8 +53,7 @@ class User extends CI_Controller
 							array(
 								'field' => 'confirm',
 								'label' => 'Konfirmasi Password',
-								'rules' => '
-										required|matches[password]',
+								'rules' => 'required|matches[password]',
 								'errors' => array(
 											'required' => 'Anda harus mengisi %s',
 											'matches' => '%s tidak sesuai password'
@@ -114,8 +62,7 @@ class User extends CI_Controller
 							array(
 								'field' => 'name',
 								'label' => 'Nama',
-								'rules' => '
-										required',
+								'rules' => 'required',
 								'errors' => array(
 											'required' => 'Anda harus mengisi %s'
 											),		
@@ -123,8 +70,7 @@ class User extends CI_Controller
 							array(
 								'field' => 'email',
 								'label' => 'Email',
-								'rules' => '
-										required',
+								'rules' => 'required',
 								'errors' => array(
 											'required' => 'Anda harus mengisi %s'
 											),		
@@ -132,8 +78,7 @@ class User extends CI_Controller
 							array(
 								'field' => 'phone',
 								'label' => 'Phone',
-								'rules' => '
-										required',
+								'rules' => 'required',
 								'errors' => array(
 											'required' => 'Anda harus mengisi %s'
 											),		
@@ -156,13 +101,6 @@ class User extends CI_Controller
 			$this->User_Model->create_user($data);
 			redirect('login');
 		}
-
-
-
-
-
-
-
 	}
 }
 

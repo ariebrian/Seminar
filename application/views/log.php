@@ -21,7 +21,7 @@
     </div>
   </div>  
 <?php endif ?>
-<?php if (isset($_SESSION['user_name'])) {
+<?php if (isset($_SESSION['uname'])) {
   redirect('');
 } ?>
 <div class="content-normal">

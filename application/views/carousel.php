@@ -7,12 +7,14 @@
                 <li data-target="#carousel-example-generic" data-slide-to="1"></li>
             </ol>
             <div class="carousel-inner">
-                <div class="item active">
-                    <img class="slide-image" src="<?php echo base_url(); ?>img/y-tho.jpg" alt="">
-                </div>
-                <div class="item">
-                    <img class="slide-image" src="<?php echo base_url(); ?>img/y-tho.jpg" alt="">
-                </div>
+                <center>
+                    <div class="item active">
+                        <img class="slide-image" src="<?php echo base_url(); ?>img/y-tho.jpg" alt="">
+                    </div>
+                    <div class="item">
+                        <img class="slide-image" src="<?php echo base_url(); ?>img/y-tho.jpg" alt="">
+                    </div>
+                </center>
             </div>
             <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
                 <span class="glyphicon glyphicon-chevron-left"></span>
