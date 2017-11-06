@@ -1,30 +1,34 @@
 <!-- Buat Data Diri -->
 <h1 class="page-header"><strong>Profil Saya</strong></h1>
-<div class="container-fluid content-normal">
-	<div class="col-md-2">
-		<img src="<?php echo base_url(); ?>img/y-tho.jpg" alt="" class="img img-thumbnail">
-		<ul style="list-style-type: none">
-			<li>
-				<a href="#">
-					<span class="glyphicon glyphicon-comment"></span>
-					99 new messages
-				</a>
-			</li>
-			<li>
-				<span class="glyphicon glyphicon-user"></span>
-				Nama Saya Budi
-			</li>
-			<li>
-				<span class="glyphicon glyphicon-envelope"></span>
-				Email Saya
-			</li>
-			<li>
-				<span class="glyphicon glyphicon-earphone"></span>
-				Nomor Saya
-			</li>
-		</ul>
+<div class="container-fluid content-normal" style="padding: 0 5px 0 5px;">
+	<div class="content-full">
+		<div class="row">
+			<div class="col-md-4">
+				<img src="<?php echo base_url(); ?>img/y-tho.jpg" alt="" class="img">
+			</div>
+			<ul style="list-style-type: none; padding: 10px 0 0 25px;">
+				<li>
+					<a href="#">
+						<span class="glyphicon glyphicon-comment"></span>
+						99 new messages
+					</a>
+				</li>
+				<li>
+					<span class="glyphicon glyphicon-user"></span>
+					Nama Saya Budi
+				</li>
+				<li>
+					<span class="glyphicon glyphicon-envelope"></span>
+					Email Saya
+				</li>
+				<li>
+					<span class="glyphicon glyphicon-earphone"></span>
+					Nomor Saya
+				</li>
+			</ul>
+		</div>
 	</div>
-	<div class="col-md-6">
+	<div class="col-md-12">
 		<ul class="nav nav-pills nav-justified">
 			<li class="active"><a href="#list" data-toggle="pill">List Seminar</a></li>
 			<li><a href="#event" data-toggle="pill">My Event</a></li>
@@ -39,7 +43,7 @@
 				<?php for ($i=0; $i < 3; $i++) { ?>
 				<tr>
 					<td>
-						<img src="<?php echo base_url(); ?>img/y-tho.jpg" alt="" class="img-list">
+						<img src="<?php echo base_url(); ?>img/y-tho.jpg" alt="" class="img-responsive img-list">
 					</td>
 					<td>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum dolorum doloribus voluptate sit officiis veritatis consequuntur, praesentium quo voluptatibus aliquam mollitia maxime, impedit recusandae illo sapiente ab, fugit amet, eius.</p>
@@ -57,7 +61,7 @@
 				<?php for ($i=0; $i < 1; $i++) { ?>
 				<tr>
 					<td>
-						<img src="<?php echo base_url(); ?>img/y-tho.jpg" alt="" class="img-list img-thumbnail img-responsive">
+						<img src="<?php echo base_url(); ?>img/y-tho.jpg" alt="" class="img-responsive img-list">
 					</td>
 					<td>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum dolorum doloribus voluptate sit officiis veritatis consequuntur, praesentium quo voluptatibus aliquam mollitia maxime, impedit recusandae illo sapiente ab, fugit amet, eius.</p>
@@ -68,7 +72,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="col-md-4">
+	<div class="content-full col-md-12" style="margin: 0 0 10px 10px; padding-right: 0;">
 		<div id="calendar"></div>
 	</div>
 </div>

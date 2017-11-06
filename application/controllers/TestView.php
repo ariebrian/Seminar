@@ -17,7 +17,6 @@ class TestView extends CI_Controller
 	{
 		$this->load->view('header');
 		$this->load->view('index');
-		$this->load->view('carousel');
 		$this->load->view('footer');
 	}
 

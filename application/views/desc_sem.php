@@ -1,16 +1,12 @@
 <div class="page-header">
 	<h1><strong>Deskripsi Seminar</strong></h1>
 </div>
-<div class="container-fluid">
+<div class="container-fluid content-full">
 	<div class="col-md-4">
 		<center>	
 			<img src="<?php echo base_url(); ?>img/whaha.png" id="img-modal">
 
 			<div id="myModal" class="modal">
-				<div class="zoom-tools">
-					<span class="glyphicon glyphicon-zoom-in" id="zoom-in"></span>
-					<span class="glyphicon glyphicon-zoom-out" id="zoom-out"></span>
-				</div>
 				<span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
 
 				<img class="modal-content" id="img01" data-zoom-image="<?php echo base_url(); ?>img/y-tho.png">
@@ -28,17 +24,17 @@
 	<div class="col-md-4">
 		<div id="calendar"></div>
 	</div>
-	<div class="col-md-12">
-		<div class="sem-content">
-			<p class="sem-desc-head">
-				Deskripsi Seminar
-			</p>
-			<p class="sem-desc-body">
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim modi eos ut, totam excepturi quisquam perspiciatis harum fugit explicabo reprehenderit quis reiciendis doloribus culpa molestiae neque sunt maiores assumenda necessitatibus?
-			</p>
-			<div class="sem-desc-foot">
-				<a href="#" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span>Add To Your List</a>
-			</div>
+</div>
+<div class="content-full" style="background-color: #ECEFF1;">
+	<div class="sem-content">
+		<p class="sem-desc-head">
+			Deskripsi Seminar
+		</p>
+		<p class="sem-desc-body">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim modi eos ut, totam excepturi quisquam perspiciatis harum fugit explicabo reprehenderit quis reiciendis doloribus culpa molestiae neque sunt maiores assumenda necessitatibus?
+		</p>
+		<div class="sem-desc-foot">
+			<a href="#" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span>Add To Your List</a>
 		</div>
 	</div>
 </div>

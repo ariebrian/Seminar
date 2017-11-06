@@ -26,27 +26,36 @@
 } ?>
 <div class="content-normal">
 	<div class="row">
-		<div class="col-lg-4"></div>
-		<div class="col-lg-4 ">
-			<h1>Log In to Seminar</h1>
-			<?php echo form_open('User/login_proc'); ?>
-			<form action="" method="post" action="#"> 
-				<div class="form-group">
-					<h3>Username</h3>
-					<input type="text" class="form-control" name="username" id="username" placeholder="username">
-				</div>
-				<div class="form-group">
-					<h3>Password</h3>
-					<input type="password" name="password" id="password" class="form-control" placeholder="password">
-				</div>
-				<div class="form-group">
-				<div class="btn-group">
-					<button type="submit" class="btn btn-primary" aria-expanded="false">Log In</button>
-				</div>
-				</div>
-				<a href="">Forgot Password?</a>
-			</form>
-			<?php echo form_close(); ?>
+		<div class="col-lg-1"></div>
+		<div class="col-lg-10">
+			<div class="content-full">
+				<p class="content-header">
+					Log In to Seminar
+				</p>
+				<?php echo form_open('User/login_proc'); ?>
+				<form action="" method="post" action="#"> 
+					<div class="form-group">
+						<label for="username">Username</label>
+						<input type="text" class="form-control" name="username" id="username" placeholder="Username">
+					</div>
+					<div class="form-group">
+						<label for="password">Password</label>
+						<input type="password" name="password" id="password" class="form-control" placeholder="Password">
+					</div>
+					<div class="form-group">
+					<div class="btn-group">
+						<button type="submit" class="btn btn-default btn-submit" aria-expanded="false">Log In</button>
+					</div>
+					</div>
+					<center>
+						<small>
+							<p class="small">Didn't have an account? <a href="<?php echo base_url(); ?>index.php/register">Sign Up</a></p>
+							<a href="#" class="small">Forgot Password?</a>
+						</small>
+					</center>
+				</form>
+				<?php echo form_close(); ?>
+			</div>
 		</div>
 	</div>
 </div>

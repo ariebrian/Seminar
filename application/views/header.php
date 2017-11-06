@@ -3,7 +3,7 @@
 <head>
 	<title>RTO HEHE</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/fullcalendar/fullcalendar.min.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/clndr-style.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/user.css">
@@ -24,7 +24,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span> 
 				</button>
-				<a href="#" class="navbar-brand"><img src="<?php echo base_url(); ?>img/y-tho.jpg" id="logo-brand">Seminarr</a>
+				<a href="<?php echo base_url(); ?>index.php/TestView" class="navbar-brand"><img src="<?php echo base_url(); ?>img/y-tho.jpg" id="logo-brand">Seminarr</a>
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav">
@@ -35,7 +35,7 @@
 					<li><a href="#">Page 5</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+					<li><a href="<?php echo base_url(); ?>index.php/login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
 					<li><a href="#"><span class="glyphicon glyphicon-search"></span>Search</a></li>
 				</ul>
 			</div>
