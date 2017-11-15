@@ -29,7 +29,67 @@ class User extends CI_Controller
 		$this->load->view('footer');	
 	}
 
-		public function register()
+	public function login_proc()
+	{
+        $val_login = array(
+                            array(
+                                'field' => 'username',
+                                'label' => 'Username',
+                                'rules' => 'required',
+                                 'errors' => array('required' =>'Anda harus mengisi %s.'),
+                            ),
+                            array(
+                                'field' => 'password',
+                                'label' => 'Password',
+                                'rules' => 'required',
+                                'errors' => array('required' =>'Anda harus mengisi %s.'),
+                            ),
+  
+                    );
+        $this->form_validation->set_rules($val_login);
+
+        if ($this->form_validation->run() == FALSE) {
+                
+           	$this->load->view('header');
+            $this->load->view('log');
+            $this->load->view('footer');
+           
+        } else {
+            $data = array(
+                'uname' => $this->input->post('username'),
+                'pass' => md5($this->input->post('password')) 
+                );
+            $result = $this->User_Model->login($data);
+            if ($result == TRUE) {
+                $username = $this->input->post('username');
+                $result = $this->User_Model->user_info($username);
+                if ($result != false) {
+                    $session_data = array(
+                        'uname' => $result[0]->uname,
+                        'email' => $result[0]->email,
+                        );
+                    // Add user data in session
+                    $this->session->set_userdata($session_data);
+                    $this->load->view('header');
+                    $this->load->view('index');
+                    $this->load->view('footer');
+                }   
+                else {
+                $data = array('message_display' => 'Nama Pengguna atau Password Salah');
+                
+                $this->session->set_userdata( $data );
+                $this->load->view('header');
+	            $this->load->view('log');
+	            $this->load->view('footer');
+           
+            	}
+        	}
+   		}
+   	}	
+
+	
+
+	public function register()
 	{
 		$val_reg = array(
 							array(
