@@ -124,6 +124,7 @@
 
 #calendar .clndr .days-container .days .today {
   background-color: #CFD8DC;
+  color: black !important;
 }
 #calendar .clndr .days-container .days .event {
   background-color: #BBDEFB !important;

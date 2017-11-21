@@ -43,7 +43,7 @@
 				</div>
 				<div class="form-group">
 				<div class="btn-group">
-					<button type="submit" class="btn btn-default btn-submit" aria expanded="false">Register</button>
+					<button type="submit" class="btn btn-primary btn-submit" aria expanded="false">Register</button>
 				</div>
 				</div>
 			</form>

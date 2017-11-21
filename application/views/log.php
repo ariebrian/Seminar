@@ -27,7 +27,7 @@
 <div class="content-normal">
 	<div class="row">
 		<div class="col-lg-1"></div>
-		<div class="col-lg-10">
+		<div class="col-lg-10" width="100%">
 			<div class="content-full">
 				<p class="content-header">
 					Log In to Seminar
@@ -44,7 +44,7 @@
 					</div>
 					<div class="form-group">
 					<div class="btn-group">
-						<button type="submit" class="btn btn-default btn-submit" aria-expanded="false">Log In</button>
+						<button type="submit" class="btn btn-primary btn-submit" aria-expanded="false">Log In</button>
 					</div>
 					</div>
 					<center>

@@ -19,7 +19,7 @@ class Seminar extends CI_Controller
 
 	public function insert()
 	{
-		$path = './assets/img';
+		$path = './img';
 		chmod($path, 0777);
 		$val_add = array(
 					 array(
@@ -87,13 +87,16 @@ class Seminar extends CI_Controller
 	    }
 	}
 
-	public function get_index()
+	public function index()
 	{
 		$data['seminar'] = $this->Seminar_Model->seminar_list();
-		echo "<pre>";
-		var_dump($data);
-		echo "</pre>";
-		die();
+		$this->load->view('header');
+		$this->load->view('index', $data);
+		$this->load->view('footer');
+		// echo "<pre>";
+		// var_dump($data);
+		// echo "</pre>";
+		// die();
 	}
 }
 

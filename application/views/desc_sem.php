@@ -25,17 +25,15 @@
 		<div id="calendar"></div>
 	</div>
 </div>
-<div class="content-full" style="background-color: #ECEFF1;">
-	<div class="sem-content">
-		<p class="sem-desc-head">
-			Deskripsi Seminar
-		</p>
-		<p class="sem-desc-body">
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim modi eos ut, totam excepturi quisquam perspiciatis harum fugit explicabo reprehenderit quis reiciendis doloribus culpa molestiae neque sunt maiores assumenda necessitatibus?
-		</p>
-		<div class="sem-desc-foot">
-			<a href="#" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span>Add To Your List</a>
-		</div>
+<div class="content-full">
+	<p class="sem-desc-head">
+		Deskripsi Seminar
+	</p>
+	<p class="sem-desc-body">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim modi eos ut, totam excepturi quisquam perspiciatis harum fugit explicabo reprehenderit quis reiciendis doloribus culpa molestiae neque sunt maiores assumenda necessitatibus?
+	</p>
+	<div class="sem-desc-foot">
+		<a href="#" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span>Add To Your List</a>
 	</div>
 </div>
 

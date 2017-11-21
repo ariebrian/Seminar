@@ -28,7 +28,7 @@
 			</ul>
 		</div>
 	</div>
-	<div class="col-md-12">
+	<div class="content-full">
 		<ul class="nav nav-pills nav-justified">
 			<li class="active"><a href="#list" data-toggle="pill">List Seminar</a></li>
 			<li><a href="#event" data-toggle="pill">My Event</a></li>
@@ -72,7 +72,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="content-full col-md-12" style="margin: 0 0 10px 10px; padding-right: 0;">
+	<div class="content-full" style="margin: 0 0 10px 10px; padding-right: 0;">
 		<div id="calendar"></div>
 	</div>
 </div>

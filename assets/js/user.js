@@ -62,5 +62,4 @@ $(document).ready(function() {
 	 		$('#myModal').css('display', 'none');
 	 	}
 	 });
-
 });

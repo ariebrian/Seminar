@@ -8,6 +8,7 @@ html {
 	margin: auto;
 	bottom: 0;
 	position: relative;
+	background-color: #EBEDEF !important;
 }
 
 img {
@@ -59,6 +60,7 @@ a {
 
 .navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-brand:hover {
 	box-shadow: inset 0px -3px 0px 0px white;
+	background-color: #3949AB !important;
 }
 
 .jumbotron	{
@@ -220,9 +222,9 @@ a {
 }
 
 .content-full {
-	margin: 0 10px 10px 10px;
+	margin: 10px !important;
 	padding: 10px;
-	background-color: #42A5F5;
+	background-color: #FFF;
 }
 
 .content-header {
@@ -232,6 +234,9 @@ a {
 
 .btn-submit, .btn-group {
 	width: 100% !important;
+	height: 50px;
+	font-size: 20pt;
+	/*margin: 20px auto;*/
 }
 
 #img-modal:hover {
@@ -250,6 +255,11 @@ a {
 .carousel-control:hover {
 	color: #000;
 	opacity: 1;
+}
+
+.carousel-holder {
+	margin-top: 10px !important;
+	margin-bottom: 10px !important;
 }
 
 .row {

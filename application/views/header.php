@@ -24,7 +24,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span> 
 				</button>
-				<a href="<?php echo base_url(); ?>index.php/TestView" class="navbar-brand"><img src="<?php echo base_url(); ?>img/y-tho.jpg" id="logo-brand">Seminarr</a>
+				<a href="<?php echo base_url(); ?>index.php" class="navbar-brand"><img src="<?php echo base_url(); ?>img/y-tho.jpg" id="logo-brand">Seminarr</a>
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<?php if (isset($_SESSION['uname'])): ?>

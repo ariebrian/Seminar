@@ -13,9 +13,8 @@ if (!isset($_SESSION['uname'])) {
 		<?php echo form_open_multipart('Seminar/insert'); ?>
 		<form method="post" enctype="multipart/form-data" action="#" class="sem-content">
 		<center>	
-			<!--<img src="<?php //echo base_url(); ?>img/y-tho.jpg" alt="" class="img img-responsive img-upload">-->
-			<!--<a href="#" class="btn btn-warning">Select Photo</a>-->
-			<input type="file" name="images" accept=".jpg,.png" class="btn btn-warning">
+			<!-- <img src="<?php echo base_url(); ?>img/y-tho.jpg" alt="" class="img img-responsive img-upload" id="photo-preview"> -->
+			<input type="file" name="images" accept=".jpg,.png" class="btn btn-warning" id="images">
 		</center>
 	</div>
 	<div class="col-md-8">
