@@ -4,7 +4,7 @@
 <div class="container-fluid">
 	<div class="col-md-4">
 		<center>	
-			<img src="<?php echo base_url(); ?>img/y-tho.jpg" alt="" class="img img-responsive img-thumbnail img-upload">
+			<img src="<?php echo base_url(); ?>img/y-tho.jpg" alt="" class="img img-responsive img-upload">
 			<a href="#" class="btn btn-warning">Select Photo</a>
 		</center>
 	</div>
@@ -14,7 +14,6 @@
 			<h4>Tambahkan Event Anda</h4>
 		</div>
 		<div class="sem-desc-body">
-			
 			<div class="form-group">
 				<label for="nama">Nama Seminar</label>
 				<input type="text" class="form-control" id="nama" name="nama">

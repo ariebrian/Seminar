@@ -35,7 +35,7 @@
 		</ul>
 		<div class="tab-content">
 			<div class="tab-pane fade in active" id="list">
-			<table class="table table-striped">
+			<table class="table table-bordered">
 				<tr>
 					<th>Photo</th>
 					<th>Description</th>

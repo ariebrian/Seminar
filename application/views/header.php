@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>RTO HEHE</title>
+	<title>Seminarr</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/fullcalendar/fullcalendar.min.css">
@@ -27,17 +27,20 @@
 				<a href="<?php echo base_url(); ?>index.php/TestView" class="navbar-brand"><img src="<?php echo base_url(); ?>img/y-tho.jpg" id="logo-brand">Seminarr</a>
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
-				<ul class="nav navbar-nav">
-					<li><a href="#">Page 1</a></li>
-					<li><a href="#">Page 2</a></li>
-					<li><a href="#">Page 3</a></li>
-					<li><a href="#">Page 4</a></li>
-					<li><a href="#">Page 5</a></li>
-				</ul>
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="<?php echo base_url(); ?>index.php/login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
-					<li><a href="#"><span class="glyphicon glyphicon-search"></span>Search</a></li>
-				</ul>
+				<?php if (isset($_SESSION['uname'])): ?>
+					<ul class="nav navbar-nav">
+						<li><a href="<?php echo base_url().'index.php/profile/'.$_SESSION['id']; ?>">My Profile</a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="<?php echo base_url(); ?>index.php/logout"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+						<li><a href="#"><span class="glyphicon glyphicon-search"></span>Search</a></li>
+					</ul>
+				<?php else: ?>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="<?php echo base_url(); ?>index.php/login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+						<li><a href="#"><span class="glyphicon glyphicon-search"></span>Search</a></li>
+					</ul>
+				<?php endif ?>
 			</div>
 		</div>
 	</nav>

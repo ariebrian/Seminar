@@ -1,3 +1,15 @@
+html {
+	height: 100%;
+	margin: 0;
+}
+
+.content, body {
+	min-height: calc(100vh - 50px);
+	margin: auto;
+	bottom: 0;
+	position: relative;
+}
+
 img {
 	min-width: 100px;
 	max-width: 300px;
@@ -6,7 +18,7 @@ img {
 	margin: 10px;
 }
 
-img#logo-brand {
+#logo-brand {
 	max-width: 25px !important;
 	min-width: 25px !important;
 	max-height: 25px !important;
@@ -15,7 +27,17 @@ img#logo-brand {
 	margin: 0 10px 0 0;
 }
 
-a.white {
+.img-wrap {
+	margin: 0 10px 5px 0;
+	max-height: 350px;
+}
+
+.img-upload {
+	max-height: 300px;
+	min-height: 300px;
+}
+
+.white {
 	color: white;
 }
 
@@ -23,7 +45,7 @@ a {
 	color: black;
 }
 
-nav.navbar {
+.navbar {
 	border-radius: 0 0 0 0;
 	background-color: #3F51B5;
 	color: white;
@@ -59,16 +81,12 @@ nav.navbar {
 	bottom: 0;
 }
 
-ul.nav li a {
+.nav li a {
 	color: black;
 }
 
-ul.nav li a.active {
+.nav li a.active {
 	color: white !important;
-}
-
-img.img-list {
-	/*width: 25%;*/
 }
 
 .tab-content {
@@ -86,12 +104,6 @@ img.img-list {
 	font-style: bold;
 }
 
-img.img-wrap {
-	/*float: left;*/
-	margin: 0 10px 5px 0;
-	max-height: 350px;
-}
-
 .title {
 	width: 100%;
 	text-align: center;
@@ -101,7 +113,6 @@ img.img-wrap {
 }
 
 .sem-content {
-	border-radius: 10px 10px 10px 10px;
 	background-color: #ECEFF1;
 	margin: 25px 0 25px 0;
 }
@@ -122,10 +133,6 @@ img.img-wrap {
 
 }
 
-.img-upload {
-	max-height: 300px;
-	min-height: 300px;
-}
 
 /* The Modal (background) */
 .modal {
@@ -154,21 +161,6 @@ img.img-wrap {
     margin: 100px 0 0 0;
     /*width: 80%;*/
     /*max-width: 700px;*/
-}
-/* Modal Zoom Tools */
-.zoom-tools	{
-	background-color: #F9F9F9;
-	position: absolute;
-	margin: 0 0 10px 0;
-	padding: 10px;
-	border-radius: 0 0 10px 0;
-	position: fixed;
-	z-index: 999999;
-}
-
-.zoom-tools .glyphicon {
-	font-size: 25px;
-	cursor: pointer;
 }
 
 /* Caption of Modal Image (Image Text) - Same Width as the Image */
@@ -214,7 +206,7 @@ img.img-wrap {
 }
 
 .close:hover,
-.close:focus {
+.close:focus {				
     color: #bbb;
     text-decoration: none;
     cursor: pointer;
@@ -228,7 +220,7 @@ img.img-wrap {
 }
 
 .content-full {
-	margin: 0 10px 0 10px;
+	margin: 0 10px 10px 10px;
 	padding: 10px;
 	background-color: #42A5F5;
 }
@@ -240,4 +232,32 @@ img.img-wrap {
 
 .btn-submit, .btn-group {
 	width: 100% !important;
+}
+
+#img-modal:hover {
+	cursor: zoom-in;
+}
+
+#img-modal {
+	max-height: 300px;
+}
+
+.carousel-control {
+	background-image: none !important;
+	color: #000;
+}
+
+.carousel-control:hover {
+	color: #000;
+	opacity: 1;
+}
+
+.row {
+	margin-right: 0 !important;
+	margin-left: 0 !important;
+}
+
+.img-list {
+	margin: 10px !important;
+	max-height: 300px;
 }

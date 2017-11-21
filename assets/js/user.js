@@ -41,6 +41,7 @@ $(document).ready(function() {
 				"max-height": 'max-content',
 				"min-width": 'auto',
 				"max-width": 'max-content',
+				"cursor":'zoom-out',
 			});
 		} else {
 			$('#img01').css({
@@ -48,6 +49,7 @@ $(document).ready(function() {
 				"max-height": '',
 				"min-width": '',
 				"max-width": '',
+				"cursor":'zoom-out',
 			});
 		}
 	});

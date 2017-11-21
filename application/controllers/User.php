@@ -15,6 +15,13 @@ class User extends CI_Controller
 		$this->load->model('User_Model');
 	}
 
+	public function index()
+	{
+		$this->load->view('header');
+		$this->load->view('index');
+		$this->load->view('footer');
+	}
+
 	public function user_login()
 	{
 		$this->load->view('header');
@@ -65,6 +72,7 @@ class User extends CI_Controller
                 $result = $this->User_Model->user_info($username);
                 if ($result != false) {
                     $session_data = array(
+                    	'id'	=> $result[0]->id_user,
                         'uname' => $result[0]->uname,
                         'email' => $result[0]->email,
                         );
@@ -161,6 +169,12 @@ class User extends CI_Controller
 			$this->User_Model->create_user($data);
 			redirect('login');
 		}
+	}
+
+	public function logout()
+	{
+		$this->session->sess_destroy();
+		redirect('');
 	}
 }
 
