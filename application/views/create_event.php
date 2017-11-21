@@ -10,15 +10,15 @@ if (!isset($_SESSION['uname'])) {
 </div>
 <div class="container-fluid">
 	<div class="col-md-4">
+		<?php echo form_open_multipart('Seminar/insert'); ?>
+		<form method="post" enctype="multipart/form-data" action="#" class="sem-content">
 		<center>	
-			<img src="<?php echo base_url(); ?>img/y-tho.jpg" alt="" class="img img-responsive img-upload">
+			<!--<img src="<?php //echo base_url(); ?>img/y-tho.jpg" alt="" class="img img-responsive img-upload">-->
 			<!--<a href="#" class="btn btn-warning">Select Photo</a>-->
 			<input type="file" name="images" accept=".jpg,.png" class="btn btn-warning">
 		</center>
 	</div>
 	<div class="col-md-8">
-		<?php echo form_open_multipart('Seminar/insert'); ?>
-		<form action="#" class="sem-content">
 		<div class="sem-desc-head">
 			<h4>Tambahkan Event Anda</h4>
 		</div>

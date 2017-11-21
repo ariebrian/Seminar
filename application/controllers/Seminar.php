@@ -19,6 +19,8 @@ class Seminar extends CI_Controller
 
 	public function insert()
 	{
+		$path = './assets/img';
+		chmod($path, 0777);
 		$val_add = array(
 					 array(
 					 	'field' => 'nama' , 
@@ -39,7 +41,7 @@ class Seminar extends CI_Controller
 					 	'errors' => array('required'=>'%s harus diisi'),
 					 ),
 				);
-		$config['upload_path']			='./assets/img';
+		$config['upload_path']			=$path;
 		$config['allowed_types']		='jpg|png';
 		$config['max_size']             = 2048;
         $config['max_width']            = 0;
@@ -55,7 +57,13 @@ class Seminar extends CI_Controller
 	    }else{
 	    	$this->upload->do_upload('images');
 	    	$data_upload = $this->upload->data();
+	    	//echo "<pre>";
+	    	//print_r($data_upload);
+	    	//echo "</pre>";
+	    	//die();
 	    	$image_path = $data_upload['full_path'];
+	    	//var_dump($image_path);
+	    	//die();
 	    	$date = date_create($this->input->post('tanggal'));
 	    	$date_formatted = date_format($date,"Y/m/d");
 	    	//var_dump($date_formatted);
@@ -82,9 +90,10 @@ class Seminar extends CI_Controller
 	public function get_index()
 	{
 		$data['seminar'] = $this->Seminar_Model->seminar_list();
-		redirect('',$data);
+		echo "<pre>";
 		var_dump($data);
-		
+		echo "</pre>";
+		die();
 	}
 }
 

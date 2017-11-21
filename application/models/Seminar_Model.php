@@ -20,7 +20,7 @@ class Seminar_Model extends CI_Model
 	{
 		$this->db->select('*');
 		$this->db->from('list_seminar');
-		//$this->db->limit('8');
+		$this->db->limit('8');
 		$query = $this->db->get();
 		return $query->result();
 	}
