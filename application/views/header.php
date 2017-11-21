@@ -33,12 +33,12 @@
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="<?php echo base_url(); ?>index.php/logout"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
-						<li><a href="#"><span class="glyphicon glyphicon-search"></span>Search</a></li>
+						<!-- <li><a href="#"><span class="glyphicon glyphicon-search"></span>Search</a></li> -->
 					</ul>
 				<?php else: ?>
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="<?php echo base_url(); ?>index.php/login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
-						<li><a href="#"><span class="glyphicon glyphicon-search"></span>Search</a></li>
+						<!-- <li><a href="#"><span class="glyphicon glyphicon-search"></span>Search</a></li> -->
 					</ul>
 				<?php endif ?>
 			</div>

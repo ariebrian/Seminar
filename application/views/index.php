@@ -5,13 +5,18 @@
 		 **/
 		$('.navbar').css('background-color', 'transparent');
 		$(window).on('scroll', function() {
-			event.preventDefault();
 			var wn = $(window).scrollTop();
+			event.preventDefault();
 			if (wn > 0) {
 				$('.navbar').css('background-color', '#2979FF');
 			} else {
 				$('.navbar').css('background-color', 'transparent');
 			}
+		});
+
+
+		$('.navbar-toggle').click(function() {
+			$('.navbar').css('background-color', '#2979FF');
 		});
 	</script>
 	<div class="jumbotron">
@@ -28,9 +33,9 @@
 	</div>
 <?php endif ?>
 <?php if (!isset($_SESSION['id'])): ?>
-	<div class="row carousel-holder content-full" style="margin-right: 10px !important; margin-left: 10px !important;">
+	<div class="row carousel-holder content-full" style="margin-right: 10px !important; margin-left: 10px !important;;">
 <?php else: ?>
-	<div class="row carousel-holder content-normal content-full" style="margin-right: 10px !important; margin-left: 10px !important;">
+	<div class="row carousel-holder content-normal content-full" style="margin-right: 10px !important; margin-left: 10px !important; margin-top: 60px !important">
 <?php endif ?>
     <div class="col-md-12">
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
