@@ -1,3 +1,10 @@
+<?php 
+$this->load->library('session');
+if (!isset($_SESSION['uname'])) {
+	redirect('login');
+}
+
+ ?>
 <div class="page-header">
 	<h1><strong>Create Event</strong></h1>
 </div>
@@ -5,10 +12,12 @@
 	<div class="col-md-4">
 		<center>	
 			<img src="<?php echo base_url(); ?>img/y-tho.jpg" alt="" class="img img-responsive img-upload">
-			<a href="#" class="btn btn-warning">Select Photo</a>
+			<!--<a href="#" class="btn btn-warning">Select Photo</a>-->
+			<input type="file" name="images" accept=".jpg,.png" class="btn btn-warning">
 		</center>
 	</div>
 	<div class="col-md-8">
+		<?php echo form_open_multipart('Seminar/insert'); ?>
 		<form action="#" class="sem-content">
 		<div class="sem-desc-head">
 			<h4>Tambahkan Event Anda</h4>
@@ -20,7 +29,7 @@
 			</div>
 			<div class="form-group">
 				<label for="tanggal">Tanggal Seminar</label>
-				<input type="text" class="form-control" id="tanggal" name="tanggal">
+				<input type="date" class="form-control" id="tanggal" name="tanggal">
 			</div>
 			<div class="form-group">
 				<label for="CP">CP Seminar</label>
@@ -32,7 +41,7 @@
 			</div>
 			<div class="form-group">
 				<label for="link">Link Seminar</label>
-				<input type="url" class="form-control" id="link" name="link">
+				<input type="text" class="form-control" id="link" name="link">
 			</div>
 		</div>
 		<div class="sem-desc-foot">
@@ -41,5 +50,6 @@
 			</center>
 		</div>
 		</form>
+		<?php echo form_close(); ?>
 	</div>
 </div>

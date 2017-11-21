@@ -57,9 +57,7 @@ class User extends CI_Controller
 
         if ($this->form_validation->run() == FALSE) {
                 
-           	$this->load->view('header');
-            $this->load->view('log');
-            $this->load->view('footer');
+           	redirect('login');
            
         } else {
             $data = array(
@@ -78,18 +76,13 @@ class User extends CI_Controller
                         );
                     // Add user data in session
                     $this->session->set_userdata($session_data);
-                    $this->load->view('header');
-                    $this->load->view('index');
-                    $this->load->view('footer');
+                    redirect('');
                 }   
                 else {
                 $data = array('message_display' => 'Nama Pengguna atau Password Salah');
                 
                 $this->session->set_userdata( $data );
-                $this->load->view('header');
-	            $this->load->view('log');
-	            $this->load->view('footer');
-           
+                redirect('login');
             	}
         	}
    		}

@@ -11,18 +11,18 @@ class Seminar_Model extends CI_Model
 		parent::__construct();
 		$this->load->database();
 	}
+	public function insert_sem($data)
+	{
+		$this->db->insert('list_seminar',$data);
+	}
 
 	public function seminar_list()
 	{
 		$this->db->select('*');
 		$this->db->from('list_seminar');
+		//$this->db->limit('8');
 		$query = $this->db->get();
-
-		if ($query->num_rows() == 1) {
-			return $query->result();
-		}else{
-			return false;
-		}
+		return $query->result();
 	}
 
 	public function get_seminar($data)
