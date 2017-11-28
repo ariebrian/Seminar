@@ -40,6 +40,19 @@ class Seminar_Model extends CI_Model
 			return false;
 		}
 	}
+
+	public function sem_id_user($id)
+	{
+		$this->db->select('*');
+		$this->db->from('list_seminar');
+		$this->db->where('id_user',$id);
+		$query=$this->db->get();
+		if ($query->num_rows() > 0) {
+			return $query->result();
+		}else{
+			return false;
+		}
+	}
 }
 
 ?>

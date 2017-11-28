@@ -45,6 +45,20 @@ class User_Model extends CI_Model
 	{
 		$this->db->insert('user',$data);
 	}
+
+	public function user_id($id)
+	{
+		$this->db->select('*');
+		$this->db->from('user');
+		$this->db->where('id_user',$id);
+		$query = $this->db->get();
+
+		if ($query->num_rows() == 1) {
+			return $query->result();
+		}else{
+			return false;
+		}
+	}
 }
 
  ?>

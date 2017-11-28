@@ -15,6 +15,7 @@ class Seminar extends CI_Controller
 		$this->load->helper('form');
 		$this->load->helper('date');
 		$this->load->model('Seminar_Model');
+		$this->load->model('User_Model');
 	}
 
 	public function insert()
@@ -115,6 +116,21 @@ class Seminar extends CI_Controller
 			$this->load->view('desc_sem',$sem);
 			$this->load->view('footer');
 		}
+	}
+
+	public function user_sem($id)
+	{
+		$data = array(
+				'sem' => $this->Seminar_Model->sem_id_user($id) , 
+				'user' => $this->User_Model->user_id($id),
+			);
+		echo "<pre>";
+		var_dump($data);
+		die();
+		echo "</pre>";
+		$this->load->view('header');
+		$this->load->view('profile',$data);
+		$this->load->view('footer');
 	}
 }
 
