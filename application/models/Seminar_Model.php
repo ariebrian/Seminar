@@ -25,12 +25,12 @@ class Seminar_Model extends CI_Model
 		return $query->result();
 	}
 
-	public function get_seminar($data)
+	public function get_seminar($id)
 	{
-		$cond = "sem_name =" . "'" . $data['sem_name']."'";
+		//$cond = "id_sem =" . "'" . $id['id_sem']."'";
 		$this->db->select('*');
 		$this->db->from('list_seminar');
-		$this->db->where($cond);
+		$this->db->where('id_sem',$id);
 		$this->db->limit(1);
 		$query = $this->db->get();
 

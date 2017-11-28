@@ -98,6 +98,24 @@ class Seminar extends CI_Controller
 		// echo "</pre>";
 		// die();
 	}
+
+	public function get_seminar($id)
+	{
+		if($id === NULL){
+			redirect('');
+		}else{
+			$sem = array(
+					'details' => $this->Seminar_Model->get_seminar($id) , 
+					);
+			//echo "<pre>";
+			//var_dump($sem);
+			//die();
+			//echo "</pre>";
+			$this->load->view('header');
+			$this->load->view('desc_sem',$sem);
+			$this->load->view('footer');
+		}
+	}
 }
 
  ?>

@@ -71,8 +71,15 @@
 		<?php foreach ($seminar as $key): ?>
 			<div class="col-md-3">
 				<center>
+					<?php 
+					//echo "<pre>";
+					//var_dump($key); die();
+					//echo "</pre>"; ?>
+					<a href="<?php echo base_url().'index.php/detail/'.$key->id_sem; ?>">
+						
 					<img class="img-responsive" src="<?php echo base_url($key->sem_img); ?>" alt="">
 					<?php echo $key->sem_name; ?>
+					</a>
 				</center>
 			</div>
 		<?php endforeach ?>

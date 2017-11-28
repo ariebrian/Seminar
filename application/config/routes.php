@@ -57,3 +57,4 @@ $route['login'] = 'User/user_login';
 $route['register'] = 'User/register';
 $route['logout'] = 'User/logout';
 $route['insert'] = 'Seminar/insert';
+$route['detail/(:num)'] = 'Seminar/get_seminar/$1';
