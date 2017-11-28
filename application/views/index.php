@@ -71,7 +71,7 @@
 		<?php foreach ($seminar as $key): ?>
 			<div class="col-md-3">
 				<center>
-					<img class="img-responsive" src="#" alt="">
+					<img class="img-responsive" src="<?php echo base_url($key->sem_img); ?>" alt="">
 					<?php echo $key->sem_name; ?>
 				</center>
 			</div>

@@ -57,11 +57,11 @@ class Seminar extends CI_Controller
 	    }else{
 	    	$this->upload->do_upload('images');
 	    	$data_upload = $this->upload->data();
-	    	//echo "<pre>";
-	    	//print_r($data_upload);
-	    	//echo "</pre>";
-	    	//die();
-	    	$image_path = $data_upload['full_path'];
+	    	// echo "<pre>";
+	    	// print_r($data_upload);
+	    	// echo "</pre>";
+	    	// die();
+	    	$image_path = '/img/'.$data_upload['file_name'];
 	    	//var_dump($image_path);
 	    	//die();
 	    	$date = date_create($this->input->post('tanggal'));
