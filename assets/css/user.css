@@ -276,3 +276,7 @@ a {
     	margin-top: 60px !important;
     }
 }
+
+.col-lg-6 > .content-full {
+	padding: 25px !important;
+}

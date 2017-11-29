@@ -26,8 +26,8 @@
 } ?>
 <div class="content-normal">
 	<div class="row">
-		<div class="col-lg-1"></div>
-		<div class="col-lg-10" width="100%">
+		<div class="col-lg-3"></div>
+		<div class="col-lg-6" width="100%">
 			<div class="content-full">
 				<p class="content-header">
 					Log In to Seminar

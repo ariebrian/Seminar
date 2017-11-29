@@ -29,7 +29,7 @@
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<?php if (isset($_SESSION['uname'])): ?>
 					<ul class="nav navbar-nav">
-						<li><a href="<?php echo base_url().'index.php/profile/'.$_SESSION['id']; ?>">My Profile</a></li>
+						<li><a href="<?php echo base_url().'index.php/user/'.$_SESSION['id']; ?>">My Profile</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="<?php echo base_url(); ?>index.php/logout"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>

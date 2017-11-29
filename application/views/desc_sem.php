@@ -4,7 +4,7 @@
 <div class="container-fluid content-full">
 	<div class="col-md-4">
 		<center>	
-			<img src="<?php echo base_url(); ?>img/whaha.png" id="img-modal">
+			<img src="<?php echo base_url().$details[0]->sem_img; ?>" id="img-modal">
 
 			<div id="myModal" class="modal">
 				<span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
@@ -15,10 +15,10 @@
 	</div>
 	<div class="col-md-4">
 		<center>
-			<h2 class="title">Nama Seminar</h2>
-			<p>Date</p>
-			<p>CP</p>
-			<p>For Registration, Please <a href="#" class="link-cp">Click Here</a></p>
+			<h2 class="title"><?php echo $details[0]->sem_name; ?></h2>
+			<p><?php echo $details[0]->sem_date; ?></p>
+			<p><?php echo $details[0]->sem_cp; ?></p>
+			<p>For Registration, Please <a href="<?php echo $details[0]->link_reg; ?>" class="link-cp" style="color: blue;">Click Here</a></p>
 		</center>
 	</div>
 	<div class="col-md-4">
@@ -30,7 +30,7 @@
 		Deskripsi Seminar
 	</p>
 	<p class="sem-desc-body">
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim modi eos ut, totam excepturi quisquam perspiciatis harum fugit explicabo reprehenderit quis reiciendis doloribus culpa molestiae neque sunt maiores assumenda necessitatibus?
+		<?php echo $details[0]->sem_desc; ?>
 	</p>
 	<div class="sem-desc-foot">
 		<a href="#" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span>Add To Your List</a>
