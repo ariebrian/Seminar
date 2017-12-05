@@ -5,14 +5,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/fullcalendar/fullcalendar.min.css">
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/clndr-style.css">
+	<!-- <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/clndr-style.css"> -->
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/user.css">
 
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/moment.js"></script>
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/underscore-min.js"></script>
-	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/clndr.min.js"></script>
+	<script type="text/javascript" src="<?php echo base_url(); ?>assets/fullcalendar/fullcalendar.min.js"></script>
+	<!-- <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/clndr.min.js"></script> -->
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/user.js"></script>
 </head>
 <body>

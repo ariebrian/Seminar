@@ -280,3 +280,7 @@ a {
 .col-lg-6 > .content-full {
 	padding: 25px !important;
 }
+
+#calendar {
+	max-width: 500px !important;
+}

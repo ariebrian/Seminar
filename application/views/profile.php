@@ -7,23 +7,23 @@
 				<img src="<?php echo base_url(); ?>img/y-tho.jpg" alt="" class="img">
 			</div>
 			<ul style="list-style-type: none; padding: 10px 0 0 25px;">
-				<li>
+				<!-- <li>
 					<a href="#">
 						<span class="glyphicon glyphicon-comment"></span>
 						99 new messages
 					</a>
-				</li>
+				</li> -->
 				<li>
 					<span class="glyphicon glyphicon-user"></span>
-					Nama Saya Budi
+					<?php echo $user[0]->name; ?>
 				</li>
 				<li>
 					<span class="glyphicon glyphicon-envelope"></span>
-					Email Saya
+					<?php echo $user[0]->email; ?>
 				</li>
 				<li>
 					<span class="glyphicon glyphicon-earphone"></span>
-					Nomor Saya
+					<?php echo $user[0]->phone; ?>
 				</li>
 			</ul>
 		</div>
@@ -58,52 +58,43 @@
 					<th>Photo</th>
 					<th>Description</th>
 				</tr>
-				<?php for ($i=0; $i < 1; $i++) { ?>
+				<?php foreach ($sem as $key): ?>
 				<tr>
 					<td>
-						<img src="<?php echo base_url(); ?>img/y-tho.jpg" alt="" class="img-responsive img-list">
+						<img src="<?php echo $key->sem_img; ?>" alt="" class="img-responsive img-list">
 					</td>
 					<td>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum dolorum doloribus voluptate sit officiis veritatis consequuntur, praesentium quo voluptatibus aliquam mollitia maxime, impedit recusandae illo sapiente ab, fugit amet, eius.</p>
+						<p><?php echo $key->sem_desc; ?></p>
 					</td>
 				</tr>
-				<?php } ?>
+				<?php endforeach ?>
 			</table>
 			</div>
 		</div>
 	</div>
 	<div class="content-full" style="margin: 0 0 10px 10px; padding-right: 0;">
-		<div id="calendar"></div>
+		<center>
+			<div id="calendar"></div>
+		</center>
 	</div>
 </div>
 
-<script type="text/template" id="calendar-template">
-    <div class="controls">
-        <div class="clndr-previous-button">&lsaquo;</div><div class="month"><center>
-        	<%= month %> <%= year%></div><div class="clndr-next-button">&rsaquo;</div>
-        </center>
-      </div>
+<script>
+	$('#calendar').fullCalendar({
+		header: {
+			left: 'prev, next',
+			center: 'title',
+			right: ''
+		},
+		editable: false,
+		events: [
+			<?php foreach ($sem as $key): ?>
+				{
+					title: '<?php echo $key->sem_name; ?>',
+					start: '<?php echo $key->sem_date; ?>'
+				},
+			<?php endforeach ?>
+		]
+	});
 
-	<center>
-	    <div class="days-container">
-	    	<div class="days">
-	        	<div class="headers">
-	          		<% _.each(daysOfTheWeek, function(day) { %><div class="day-header"><%= day %></div><% }); %>
-	          	</div>
-	        <% _.each(days, function(day) { %><div class="<%= day.classes %>" id="<%= day.id %>"><%= day.day %></div><% }); %>
-	          <div class="events">
-	            <div class="headers">
-	              <div class="event-header">EVENT BULAN INI</div>
-	            </div>
-	            <div class="events-list">
-	              <% _.each(eventsThisMonth, function(event) { %>
-	                <div class="event">
-	                  <a href="<%= event.url %>"><%= moment(event.date).format('MMMM Do') %>: <%= event.title %></a>
-	                </div>
-	              <% }); %>
-	            </div>
-	          </div>
-	        </div>
-	    </div>
-	</center>
 </script>

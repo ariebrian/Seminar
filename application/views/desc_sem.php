@@ -37,21 +37,24 @@
 	</div>
 </div>
 
-<script type="text/template" id="calendar-template">
-    <div class="controls">
-        <div class="clndr-previous-button">&lsaquo;</div><div class="month"><center>
-        	<%= month %> <%= year%></div><div class="clndr-next-button">&rsaquo;</div>
-        </center>
-      </div>
+<script>
+	
+	$('#calendar').fullCalendar({
+		height: 'auto',
+		width: '324',
+		header: {
+			left: 'prev, next',
+			center: 'title',
+			right: ''
+		},
+		defaultDate: '<?php echo $details[0]->sem_date; ?>',
+		editable: false,
+		events: [
+			{
+				title: '<?php echo $details[0]->sem_name; ?>',
+				start: '<?php echo $details[0]->sem_date; ?>'
+			}
+		]
 
-	<center>
-	    <div class="days-container">
-	    	<div class="days">
-	        	<div class="headers">
-	          		<% _.each(daysOfTheWeek, function(day) { %><div class="day-header"><%= day %></div><% }); %>
-	          	</div>
-	        <% _.each(days, function(day) { %><div class="<%= day.classes %>" id="<%= day.id %>"><%= day.day %></div><% }); %>
-	        </div>
-	    </div>
-	</center>
+	});
 </script>
