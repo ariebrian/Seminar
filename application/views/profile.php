@@ -7,23 +7,23 @@
 				<img src="<?php echo base_url(); ?>img/y-tho.jpg" alt="" class="img">
 			</div>
 			<ul style="list-style-type: none; padding: 10px 0 0 25px;">
-				<li>
+				<!--<li>
 					<a href="#">
 						<span class="glyphicon glyphicon-comment"></span>
 						99 new messages
 					</a>
-				</li>
+				</li>-->
 				<li>
 					<span class="glyphicon glyphicon-user"></span>
-					Nama Saya Budi
+					<?php echo $user[0]->uname; ?>
 				</li>
 				<li>
 					<span class="glyphicon glyphicon-envelope"></span>
-					Email Saya
+					<?php echo $user[0]->email; ?>
 				</li>
 				<li>
 					<span class="glyphicon glyphicon-earphone"></span>
-					Nomor Saya
+					<?php echo $user[0]->phone; ?>
 				</li>
 			</ul>
 		</div>
@@ -58,13 +58,15 @@
 					<th>Photo</th>
 					<th>Description</th>
 				</tr>
-				<?php for ($i=0; $i < 1; $i++) { ?>
+				<?php foreach ($sem as $seminar) {
+					
+				?>
 				<tr>
 					<td>
-						<img src="<?php echo base_url(); ?>img/y-tho.jpg" alt="" class="img-responsive img-list">
+						<img src="<?php echo base_url($seminar->sem_img); ?>" alt="" class="img-responsive img-list">
 					</td>
 					<td>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum dolorum doloribus voluptate sit officiis veritatis consequuntur, praesentium quo voluptatibus aliquam mollitia maxime, impedit recusandae illo sapiente ab, fugit amet, eius.</p>
+						<p><?php echo $seminar->sem_desc; ?></p>
 					</td>
 				</tr>
 				<?php } ?>

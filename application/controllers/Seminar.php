@@ -124,10 +124,10 @@ class Seminar extends CI_Controller
 				'sem' => $this->Seminar_Model->sem_id_user($id) , 
 				'user' => $this->User_Model->user_id($id),
 			);
-		echo "<pre>";
-		var_dump($data);
-		die();
-		echo "</pre>";
+		//echo "<pre>";
+		//var_dump($data);
+		//die();
+		//echo "</pre>";
 		$this->load->view('header');
 		$this->load->view('profile',$data);
 		$this->load->view('footer');
