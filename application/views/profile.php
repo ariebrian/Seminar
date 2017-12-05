@@ -7,15 +7,9 @@
 				<img src="<?php echo base_url(); ?>img/y-tho.jpg" alt="" class="img">
 			</div>
 			<ul style="list-style-type: none; padding: 10px 0 0 25px;">
-				<!-- <li>
-					<a href="#">
-						<span class="glyphicon glyphicon-comment"></span>
-						99 new messages
-					</a>
-				</li> -->
 				<li>
 					<span class="glyphicon glyphicon-user"></span>
-					<?php echo $user[0]->name; ?>
+					<?php echo $user[0]->uname; ?>
 				</li>
 				<li>
 					<span class="glyphicon glyphicon-envelope"></span>
@@ -58,13 +52,13 @@
 					<th>Photo</th>
 					<th>Description</th>
 				</tr>
-				<?php foreach ($sem as $key): ?>
+				<?php foreach ($sem as $seminar) {?>
 				<tr>
 					<td>
-						<img src="<?php echo $key->sem_img; ?>" alt="" class="img-responsive img-list">
+						<img src="<?php echo base_url($seminar->sem_img); ?>" alt="" class="img-responsive img-list">
 					</td>
 					<td>
-						<p><?php echo $key->sem_desc; ?></p>
+						<p><?php echo $seminar->sem_desc; ?></p>
 					</td>
 				</tr>
 				<?php endforeach ?>
