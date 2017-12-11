@@ -53,6 +53,24 @@ class Seminar_Model extends CI_Model
 			return false;
 		}
 	}
+
+	public function add_jadwal($data)
+	{
+		$this->db->insert('jadwal',$data);
+	}
+
+	public function get_user_jadwal($id)				
+	{
+		$this->db->select('*');
+		$this->db->from('jadwal');
+		$this->db->where('id_user',$id);
+		$query=$this->db->get();
+		if ($query->num_rows() > 0) {
+			return $query->result();
+		}else{
+			return false;
+		}	
+	}
 }
 
 ?>

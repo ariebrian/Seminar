@@ -52,7 +52,7 @@
 					<th>Photo</th>
 					<th>Description</th>
 				</tr>
-				<?php foreach ($sem as $seminar) {?>
+				<?php 	foreach ($sem as $seminar) {?>
 				<tr>
 					<td>
 						<img src="<?php echo base_url($seminar->sem_img); ?>" alt="" class="img-responsive img-list">
@@ -60,8 +60,8 @@
 					<td>
 						<p><?php echo $seminar->sem_desc; ?></p>
 					</td>
+				<?php } ?>
 				</tr>
-				<?php endforeach ?>
 			</table>
 			</div>
 		</div>
@@ -82,12 +82,12 @@
 		},
 		editable: false,
 		events: [
-			<?php foreach ($sem as $key): ?>
+			<?php foreach ($sem as $key){ ?>
 				{
 					title: '<?php echo $key->sem_name; ?>',
 					start: '<?php echo $key->sem_date; ?>'
 				},
-			<?php endforeach ?>
+			<?php } ?>
 		]
 	});
 

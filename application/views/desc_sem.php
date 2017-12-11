@@ -33,7 +33,7 @@
 		<?php echo $details[0]->sem_desc; ?>
 	</p>
 	<div class="sem-desc-foot">
-		<a href="#" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span>Add To Your List</a>
+		<button class="btn btn-success" type="submit" name="id" value="<?php echo end($this->uri->segments) ?>"><span class="glyphicon glyphicon-plus"></span>Add To Your List</button>
 	</div>
 </div>
 

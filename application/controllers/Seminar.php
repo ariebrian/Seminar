@@ -132,6 +132,48 @@ class Seminar extends CI_Controller
 		$this->load->view('profile',$data);
 		$this->load->view('footer');
 	}
+
+	public function add_jadwal()
+	{
+		$id = $this->input->post('id');
+		// echo "<pre>";
+		//var_dump($id);
+		// die();
+		// echo "</pre>";
+		$detail = $this->Seminar_Model->get_seminar($id);
+		// echo "<pre>";
+		 //var_dump($detail);
+		// die();
+		// echo "</pre>";
+		$data = array(
+				'id_user' => $this->session->userdata('id') , 
+				'id_sem' => $detail[0]->id_sem,
+				'sem_name' => $detail[0]->sem_name,
+				'sem_date' => $detail[0]->sem_date,
+				);
+		// echo "<pre>";
+		// var_dump($data);
+		// die();
+		// echo "</pre>";
+		$this->Seminar_Model->add_jadwal($data);
+		$uid = $this->session->userdata('id');
+		redirect('user/$uid')
+	}
+
+	public function user_jadwal($uid)
+	{
+		$data = array(
+				'sem' => $this->Seminar_Model->get_user_jadwal($uid) , 
+				'user' => $this->User_Model->user_id($uid),
+			);
+		// echo "<pre>";
+		// var_dump($data);
+		// die();
+		// echo "</pre>";
+		$this->load->view('header');
+		$this->load->view('profile',$data);
+		$this->load->view('footer');	
+	}
 }
 
  ?>
