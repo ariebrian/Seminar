@@ -33,7 +33,16 @@
 		<?php echo $details[0]->sem_desc; ?>
 	</p>
 	<div class="sem-desc-foot">
+		<?php echo form_open('Seminar/add_jadwal'); ?>
+		<form method="post">
+		<?php if(!isset($_SESSION['uname'])){
+			redirect('login');
+		} else{
+			?>
 		<button class="btn btn-success" type="submit" name="id" value="<?php echo end($this->uri->segments) ?>"><span class="glyphicon glyphicon-plus"></span>Add To Your List</button>
+		<?php } ?>	
+		</form>
+		<?php echo form_close(); ?>
 	</div>
 </div>
 

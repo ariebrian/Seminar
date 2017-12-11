@@ -30,26 +30,49 @@
 		<div class="tab-content">
 			<div class="tab-pane fade in active" id="list">
 			<table class="table table-bordered">
+				<?php 
+					// echo "<pre>";
+					// var_dump($jadwal);
+					// die();
+					// echo "</pre>";
+				 ?>
+				<?php if ($jadwal[0] == false): ?>
+					<p>Belum memasukkan event ke jadwal</p>
+				<?php else:?>
 				<tr>
 					<th>Photo</th>
+					<th>Name</th>
+					<th>Date</th>
 					<th>Description</th>
 				</tr>
-				<?php for ($i=0; $i < 3; $i++) { ?>
+				<?php foreach ($jadwal as $sch) {?>
 				<tr>
 					<td>
-						<img src="<?php echo base_url(); ?>img/y-tho.jpg" alt="" class="img-responsive img-list">
+						<img src="<?php echo base_url($sch[0]->sem_img); ?>" alt="" class="img-responsive img-list">
+						<!--<p><?php echo $sch[0]->sem_name; ?></p>-->
 					</td>
 					<td>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum dolorum doloribus voluptate sit officiis veritatis consequuntur, praesentium quo voluptatibus aliquam mollitia maxime, impedit recusandae illo sapiente ab, fugit amet, eius.</p>
+						<p><?php echo $sch[0]->sem_name; ?></p>
 					</td>
-				</tr>
+					<td>
+						<p><?php echo $sch[0]->sem_date; ?></p>
+					</td>
+					<td>
+						<p><?php echo $sch[0]->sem_desc; ?></p>
+					</td>
 				<?php } ?>
+				<?php endif ?>
+				</tr>
 			</table>
 			</div>
 			<div class="tab-pane fade in" id="event">
 			<table class="table table-striped">
+				<?php if (empty($sem)): ?>
+					<p>Belum memasukkan event</p>
+				<?php else:?>	
 				<tr>
 					<th>Photo</th>
+					<th>Name</th>
 					<th>Description</th>
 				</tr>
 				<?php 	foreach ($sem as $seminar) {?>
@@ -58,10 +81,16 @@
 						<img src="<?php echo base_url($seminar->sem_img); ?>" alt="" class="img-responsive img-list">
 					</td>
 					<td>
+						<p><?php echo $seminar->sem_name; ?></p>
+					</td>
+					<td>
 						<p><?php echo $seminar->sem_desc; ?></p>
 					</td>
 				<?php } ?>
+				
+				<?php endif ?>
 				</tr>
+				
 			</table>
 			</div>
 		</div>

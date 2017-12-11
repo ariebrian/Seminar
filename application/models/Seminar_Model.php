@@ -63,7 +63,8 @@ class Seminar_Model extends CI_Model
 	{
 		$this->db->select('*');
 		$this->db->from('jadwal');
-		$this->db->where('id_user',$id);
+		$this->db->join('list_seminar', 'jadwal.id_sem = list_seminar.id_sem');
+		$this->db->where('jadwal.id_user',$id);
 		$query=$this->db->get();
 		if ($query->num_rows() > 0) {
 			return $query->result();
