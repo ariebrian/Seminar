@@ -122,6 +122,7 @@ class Seminar extends CI_Controller
 	{
 		$data = array(
 				'sem' => $this->Seminar_Model->sem_id_user($id) , 
+				'jadwal' => $this->Seminar_Model->get_user_jadwal($id) , 
 				'user' => $this->User_Model->user_id($id),
 			);
 		// echo "<pre>";
@@ -157,22 +158,7 @@ class Seminar extends CI_Controller
 		// echo "</pre>";
 		$this->Seminar_Model->add_jadwal($data);
 		$uid = $this->session->userdata('id');
-		redirect('user/$uid')
-	}
-
-	public function user_jadwal($uid)
-	{
-		$data = array(
-				'sem' => $this->Seminar_Model->get_user_jadwal($uid) , 
-				'user' => $this->User_Model->user_id($uid),
-			);
-		// echo "<pre>";
-		// var_dump($data);
-		// die();
-		// echo "</pre>";
-		$this->load->view('header');
-		$this->load->view('profile',$data);
-		$this->load->view('footer');	
+		redirect('user/$uid');
 	}
 }
 

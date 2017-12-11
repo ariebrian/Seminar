@@ -81,14 +81,16 @@
 			right: ''
 		},
 		editable: false,
+		<?php if ($jadwal) : ?>
 		events: [
-			<?php foreach ($sem as $key){ ?>
+			<?php foreach ($jadwal as $key): ?>
 				{
 					title: '<?php echo $key->sem_name; ?>',
 					start: '<?php echo $key->sem_date; ?>'
 				},
-			<?php } ?>
+			<?php endforeach; ?>
 		]
+		<?php endif; ?>
 	});
 
 </script>
