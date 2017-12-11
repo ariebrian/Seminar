@@ -15,10 +15,17 @@
 	</div>
 	<div class="col-md-4">
 		<center>
+			<?php 
+				// echo "<pre?";
+				// var_dump($details);
+				// die();
+				// echo "</pre>";
+			 ?>
 			<h2 class="title"><?php echo $details[0]->sem_name; ?></h2>
 			<p><?php echo $details[0]->sem_date; ?></p>
 			<p><?php echo $details[0]->sem_cp; ?></p>
-			<p>For Registration, Please <a href="<?php echo $details[0]->link_reg; ?>" class="link-cp" style="color: blue;">Click Here</a></p>
+			<p>For Registration</p>
+				<a href="<?php echo $details[0]->link_reg; ?>" class="link-cp" style="color: blue;">Click Here</a>
 		</center>
 	</div>
 	<div class="col-md-4">
