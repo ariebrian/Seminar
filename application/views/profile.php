@@ -3,9 +3,6 @@
 <div class="container-fluid content-normal" style="padding: 0 5px 0 5px;">
 	<div class="content-full">
 		<div class="row">
-			<div class="col-md-4">
-				<img src="<?php echo base_url(); ?>img/y-tho.jpg" alt="" class="img">
-			</div>
 			<ul style="list-style-type: none; padding: 10px 0 0 25px;">
 				<li>
 					<span class="glyphicon glyphicon-user"></span>
@@ -110,7 +107,7 @@
 			right: ''
 		},
 		editable: false,
-		<?php if ($jadwal) : ?>
+		<?php if ($jadwal[0]) : ?>
 		events: [
 			<?php foreach ($jadwal as $key): ?>
 				{

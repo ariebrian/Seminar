@@ -42,16 +42,27 @@
             <ol class="carousel-indicators">
                 <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
                 <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
             </ol>
             <center>
                 <div class="carousel-inner">
                     <div class="item active">
-                        <img class="slide-image" src="<?php echo base_url(); ?>img/y-tho.jpg" alt="">
-                        <div class="carousel-caption">wahaha</div>
+                    	<a href="<?php echo base_url('index.php/detail/'.$seminar[0]->id_sem); ?>">
+	                        <img class="slide-image" src="<?php echo base_url($seminar[0]->sem_img); ?>" alt="">
+	                        <div class="carousel-caption"><?php echo $seminar[0]->sem_name ?></div>
+                    	</a>
                     </div>
                     <div class="item">
-                        <img class="slide-image" src="<?php echo base_url(); ?>img/y-tho.jpg" alt="">
-                        <div class="carousel-caption">wahaha2</div>
+                    	<a href="<?php echo base_url('index.php/detail/'.$seminar[0]->id_sem); ?>">
+	                        <img class="slide-image" src="<?php echo base_url($seminar[1]->sem_img); ?>" alt="">
+	                        <div class="carousel-caption"><?php echo $seminar[1]->sem_name ?></div>
+	                    </a>
+                    </div>
+                    <div class="item">
+                    	<a href="<?php echo base_url('index.php/detail/'.$seminar[0]->id_sem); ?>">
+	                        <img class="slide-image" src="<?php echo base_url($seminar[2]->sem_img); ?>" alt="">
+	                        <div class="carousel-caption"><?php echo $seminar[2]->sem_name ?></div>
+                    	</a>
                     </div>
                 </div>
             </center>
