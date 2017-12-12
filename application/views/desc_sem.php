@@ -36,9 +36,11 @@
 	<p class="sem-desc-head">
 		Deskripsi Seminar
 	</p>
-	<p class="sem-desc-body">
-		<?php echo $details[0]->sem_desc; ?>
-	</p>
+	<pre class="content-full">
+		<p class="sem-desc-body">
+			<?php echo $details[0]->sem_desc; ?>
+		</p>
+	</pre>
 	<div class="sem-desc-foot">
 		<?php echo form_open('Seminar/add_jadwal'); ?>
 		<form method="post">
